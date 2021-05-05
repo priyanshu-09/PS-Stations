@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PS Stations</title>
+    <style>
+      @font-face {
+        font-family: "Poppins";
+        src: url(./Poppins/Poppins-Regular.ttf);
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #0c0c0c;
+        overflow-x: hidden;
+        color: white;
+        font-family: Poppins;
+      }
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        height: auto;
+        padding: 10vh 10vw;
+        background-color: #0c0c0c;
+      }
+      .input {
+        display: flex;
+        width: 80vw;
+        justify-content: center;
+      }
+      input {
+        background-color: #0c0c0c;
+        color: white;
+        border: 2px solid white;
+        padding: 2vh 3vw;
+        border-radius: 4px;
+
+        font-weight: bold;
+      }
+      .input:focus {
+        outline: none;
+      }
+      .submit {
+        margin-left: 2vw;
+        background-color: #0c0c0c;
+        color: white;
+        border: 2px solid white;
+        padding: 2vh 3vw;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .submit:hover {
+        background-color: white;
+        color: black;
+      }
+      .results {
+        margin-top: 10vh;
+      }
+      .company {
+        width: 80vw;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10vh;
+      }
+      .company-details {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 1.1em;
+        font-weight: bold;
+        width: 80vw;
+        border: 2px solid white;
+        border-radius: 4px;
+        padding: 2vh 0;
+      }
+      .company-details > div {
+        margin: 0 3vw;
+      }
+      .project-details {
+        margin-top: 5vh;
+
+        width: 75vw;
+        font-size: 0.7em;
+        display: flex;
+        flex-direction: column;
+        border-left: 2px solid white;
+        padding-left: 5vw;
+      }
+      .project-details > div {
+        margin-top: 2vh;
+        width: 75vw;
+        height: max-content;
+      }
+      b {
+        font-size: 0.95em;
+        margin-right: 2vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="input">
+        <div
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <input type="text" id="branch-input" placeholder="Search by branch" />
+        </div>
+        <div class="submit" onclick="submit()">Search</div>
+      </div>
+
+      <div class="results">
+        <!-- <div class="company">
+          <div class="company-details">
+            <div class="name">sdsdf</div>
+            <div class="station-id">sdfsdgsdfg</div>
+            <div class="company-id">sdfsd</div>
+          </div>
+          <div class="project-details">
+            <div class="project-name"><b>Project Name -</b>esdfwef</div>
+            <div class="project-desc"><b>Project Description -</b>ewwee</div>
+            <div class="project-required-skill">
+              <b>Required Skills -</b>fff
+            </div>
+            <div class="project-broad-area"><b>Broad Area -</b>sdfsd</div>
+            <div class="project-branch"><b>Branch -</b>fcvweff</div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </body>
+  <script src="./information.js"></script>
+  <script src="./index.js"></script>
+</html>
