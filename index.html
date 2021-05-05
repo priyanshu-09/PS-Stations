@@ -24,12 +24,19 @@
         width: 80vw;
         height: auto;
         padding: 10vh 10vw;
+        padding-top: 0;
         background-color: #0b0c10;
       }
       .input {
         display: flex;
-        width: 100%;
+        left: 0;
+        width: 100vw;
         justify-content: center;
+        position: fixed;
+        background-color: rgb(11, 12, 16, 0.8);
+        backdrop-filter: blur(5px);
+        padding-top: 8vh;
+        padding-bottom: 3vh;
       }
       input {
         background-color: transparent;
@@ -56,7 +63,7 @@
       }
 
       .results {
-        margin-top: 10vh;
+        margin-top: 25vh;
       }
       .company {
         width: 100%;
@@ -103,10 +110,17 @@
         .wrapper {
           width: 90vw;
           padding: 10vh 5vw;
+          padding-top: 0;
         }
         .company-details {
           font-size: 0.9em;
           width: 90vw;
+        }
+        .input {
+          padding-top: 5vh;
+        }
+        .results {
+          margin-top: 20vh;
         }
         .company {
           margin-bottom: 7vh;
@@ -126,7 +140,11 @@
         <div
           style="display: flex; justify-content: center; align-items: center"
         >
-          <input type="text" id="branch-input" placeholder="Search by branch" />
+          <input
+            type="text"
+            id="branch-input"
+            placeholder="Enter your branch (A1, A3...)"
+          />
         </div>
         <div class="submit" onclick="submit()">Search</div>
       </div>
