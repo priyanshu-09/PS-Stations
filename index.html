@@ -31,14 +31,27 @@
         display: flex;
         left: 0;
         width: 100vw;
-        justify-content: center;
+        flex-direction: column;
         position: fixed;
         background-color: rgb(11, 12, 16, 0.8);
         backdrop-filter: blur(5px);
         padding-top: 8vh;
         padding-bottom: 3vh;
       }
-      input {
+      .input-taken,
+      .input-taken > div {
+        display: flex;
+        justify-content: center;
+      }
+      .selected-industries {
+        margin-top: 2vh;
+        padding: 0 15vw;
+        font-size: 0.8em;
+        text-align: center;
+        color: #8d8e8f;
+      }
+      input,
+      select {
         background-color: transparent;
         color: #c5c6c7;
         border: 3px solid #45a29e;
@@ -62,9 +75,6 @@
         /* box-shadow: 1px 1px 7px 0px #1f2833; */
       }
 
-      .results {
-        margin-top: 25vh;
-      }
       .company {
         width: 100%;
         height: max-content;
@@ -106,6 +116,22 @@
         margin-right: 2vw;
         color: #c5c6c7 !important;
       }
+      .custom-select {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      select {
+        padding: 1vh 2vw;
+        margin-right: 2vw;
+      }
+      option {
+        color: #8d8e8f;
+        background-color: #0b0c10;
+      }
+      option:hover {
+        background-color: #45a29e;
+      }
       @media all and (max-width: 600px) {
         .wrapper {
           width: 90vw;
@@ -119,9 +145,17 @@
         .input {
           padding-top: 5vh;
         }
-        .results {
-          margin-top: 20vh;
+        .input-taken {
+          font-size: 0.7em;
+          flex-direction: column;
         }
+        .submit {
+          margin-top: 2vh;
+        }
+        .selected-industries {
+          font-size: 0.65em;
+        }
+
         .company {
           margin-bottom: 7vh;
         }
@@ -137,16 +171,34 @@
   <body>
     <div class="wrapper">
       <div class="input">
-        <div
-          style="display: flex; justify-content: center; align-items: center"
-        >
-          <input
-            type="text"
-            id="branch-input"
-            placeholder="Enter your branch (A1, A3...)"
-          />
+        <div class="input-taken">
+          <div>
+            <div class="custom-select">
+              <select
+                id="industry-select"
+                onchange="selected_industry()"
+              ></select>
+            </div>
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <input
+                type="text"
+                id="branch-input"
+                placeholder="Enter your branch (A1, A3...)"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="submit" onclick="submit()">Search</div>
+            <div class="submit" onclick="clear_all()">Clear</div>
+          </div>
         </div>
-        <div class="submit" onclick="submit()">Search</div>
+        <div class="selected-industries">Selected Industries -</div>
       </div>
 
       <div class="results">
