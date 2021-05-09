@@ -48,9 +48,15 @@ function submit() {
           (item) => branch.value.toLowerCase() === item.toLowerCase()
         );
         let matches_branch = branch_index != -1 || any_index != -1;
+
         if (
-          matches_branch ||
+          matches_branch &&
           selected_industries.includes(information[i].industry)
+        ) {
+          info.push(information[i]);
+        } else if (
+          selected_industries.includes(information[i].industry) &&
+          branch.value === ""
         ) {
           info.push(information[i]);
         }
